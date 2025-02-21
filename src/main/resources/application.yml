@@ -1,0 +1,12 @@
+server:
+  servlet:
+    context-path: /${spring.application.name}
+
+spring:
+  application:
+    name: hotel
+
+hotel:
+  room:
+    premium:
+      threshold: 100.00
