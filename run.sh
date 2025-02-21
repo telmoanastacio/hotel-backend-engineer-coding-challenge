@@ -1,6 +1,5 @@
-#!/usr/bin/env sh
+mvn -U clean install
+docker build -t hotel:latest -f Dockerfile .
+docker container run -p 8080:8080 hotel
 
-# This file will be included as a Docker ENTRYPOINT in our automated testing evironment. 
-
-echo "Build and Run you server here"
 exit 1
