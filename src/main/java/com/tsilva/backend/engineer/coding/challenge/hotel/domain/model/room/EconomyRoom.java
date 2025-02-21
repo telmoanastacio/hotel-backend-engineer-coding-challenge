@@ -7,6 +7,6 @@ package com.tsilva.backend.engineer.coding.challenge.hotel.domain.model.room;
 public class EconomyRoom extends Room {
 	
 	public EconomyRoom() {
-        super();
-    }
+		super();
+	}
 }

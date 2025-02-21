@@ -26,7 +26,8 @@ class RoomCommandResourceIT extends IntegrationTest {
 		mvc.perform(post("/api/room/occupancy")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(requestBody)
-				).andExpect(status().isOk())
+				)
+				.andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(expectedResponseBody));
 	}

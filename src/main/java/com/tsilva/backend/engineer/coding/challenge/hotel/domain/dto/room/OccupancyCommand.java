@@ -20,10 +20,10 @@ public class OccupancyCommand {
 			Integer economyRooms,
 			Collection<Double> potentialGuests
 	) {
-        this.premiumRooms = premiumRooms;
-        this.economyRooms = economyRooms;
-        this.potentialGuests = potentialGuests;
-    }
+		this.premiumRooms = premiumRooms;
+		this.economyRooms = economyRooms;
+		this.potentialGuests = potentialGuests;
+	}
 	
 	public Integer getPremiumRooms() {
 		return premiumRooms;

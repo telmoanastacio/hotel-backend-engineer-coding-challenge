@@ -10,11 +10,15 @@ import com.tsilva.backend.engineer.coding.challenge.hotel.domain.model.Hotel;
 public class Hotel2OccupancyCommandDocument {
 	
 	public OccupancyCommandDocument convert(Hotel hotel) {
-		var occupiedPremiumRooms = hotel.getPremiumRooms().stream()
-				.filter(room -> room.retrieveGuest().isPresent())
+		var occupiedPremiumRooms = hotel.getPremiumRooms()
+				.stream()
+				.filter(room -> room.retrieveGuest()
+						.isPresent())
 				.toList();
-		var occupiedEconomyRooms = hotel.getEconomyRooms().stream()
-				.filter(room -> room.retrieveGuest().isPresent())
+		var occupiedEconomyRooms = hotel.getEconomyRooms()
+				.stream()
+				.filter(room -> room.retrieveGuest()
+						.isPresent())
 				.toList();
 		//noinspection OptionalGetWithoutIsPresent
 		return OccupancyCommandDocument.OccupancyCommandDocumentBuilder.builder()
@@ -24,7 +28,8 @@ public class Hotel2OccupancyCommandDocument {
 								.map(room -> room.retrieveGuest()
 										.get()
 										.retrievePayLimit()
-								).reduce(0.0, Double::sum)
+								)
+								.reduce(0.0, Double::sum)
 				)
 				.usageEconomy(occupiedEconomyRooms.size())
 				.revenueEconomy(
@@ -32,7 +37,8 @@ public class Hotel2OccupancyCommandDocument {
 								.map(room -> room.retrieveGuest()
 										.get()
 										.retrievePayLimit()
-								).reduce(0.0, Double::sum)
+								)
+								.reduce(0.0, Double::sum)
 				)
 				.build();
 	}

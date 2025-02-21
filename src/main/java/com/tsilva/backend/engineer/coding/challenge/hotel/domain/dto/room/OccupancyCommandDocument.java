@@ -7,15 +7,15 @@ package com.tsilva.backend.engineer.coding.challenge.hotel.domain.dto.room;
 public class OccupancyCommandDocument {
 	
 	private final Integer usagePremium;
-	private final Double revenuePremium;	// could be BigDecimal, using Double for the sake of simplicity
+	private final Double revenuePremium;    // could be BigDecimal, using Double for the sake of simplicity
 	private final Integer usageEconomy;
-	private final Double revenueEconomy;	// same here
+	private final Double revenueEconomy;    // same here
 	
 	private OccupancyCommandDocument(OccupancyCommandDocumentBuilder builder) {
 		this.usagePremium = builder.usagePremium;
-        this.revenuePremium = builder.revenuePremium;
-        this.usageEconomy = builder.usageEconomy;
-        this.revenueEconomy = builder.revenueEconomy;
+		this.revenuePremium = builder.revenuePremium;
+		this.usageEconomy = builder.usageEconomy;
+		this.revenueEconomy = builder.revenueEconomy;
 	}
 	
 	public Integer getUsagePremium() {

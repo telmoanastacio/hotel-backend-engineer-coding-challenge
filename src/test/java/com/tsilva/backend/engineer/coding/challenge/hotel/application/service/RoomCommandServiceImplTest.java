@@ -21,10 +21,10 @@ class RoomCommandServiceImplTest {
 			155.0,
 			374.0,
 			22.0,
-            99.99,
-            100.0,
-            101.0,
-            115.0,
+			99.99,
+			100.0,
+			101.0,
+			115.0,
 			209.0
 	);
 	private final Double premiumRoomThreshold = 100.0;

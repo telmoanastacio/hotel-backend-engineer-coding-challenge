@@ -9,10 +9,10 @@ public class Guest {
 	private final Double payLimit;
 	
 	public Guest(Double payLimit) {
-        this.payLimit = payLimit;
-    }
+		this.payLimit = payLimit;
+	}
 	
 	public Double retrievePayLimit() {
-        return payLimit;
-    }
+		return payLimit;
+	}
 }

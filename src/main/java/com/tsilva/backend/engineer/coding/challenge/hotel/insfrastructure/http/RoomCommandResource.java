@@ -20,11 +20,13 @@ public class RoomCommandResource {
 	private final RoomCommandService roomCommandService;
 	
 	public RoomCommandResource(RoomCommandService roomCommandService) {
-        this.roomCommandService = roomCommandService;
-    }
+		this.roomCommandService = roomCommandService;
+	}
 	
 	@PostMapping("/occupancy")
-	public ResponseEntity<OccupancyCommandDocument> postOccupancy(@RequestBody OccupancyCommand command) {
+	public ResponseEntity<OccupancyCommandDocument> postOccupancy(
+			@RequestBody
+			OccupancyCommand command) {
 		return ResponseEntity.ok(roomCommandService.assignRooms(command));
 	}
 }

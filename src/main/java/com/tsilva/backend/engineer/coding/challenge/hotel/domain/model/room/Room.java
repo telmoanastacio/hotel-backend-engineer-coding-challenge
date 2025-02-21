@@ -13,17 +13,19 @@ public abstract class Room {
 	
 	private Guest guest;
 	
-	Room() {}
+	Room() {
+	}
 	
 	public void attemptToAddLeadGuest(Guest guest) {
 		if (Objects.isNull(this.guest)) {
 			this.guest = guest;
-		} else {
+		}
+		else {
 			throw new UnsupportedOperationException("Guest is already defined.");
 		}
 	}
 	
 	public Optional<Guest> retrieveGuest() {
-        return Optional.ofNullable(guest);
-    }
+		return Optional.ofNullable(guest);
+	}
 }

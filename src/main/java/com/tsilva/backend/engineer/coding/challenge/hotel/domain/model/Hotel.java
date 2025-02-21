@@ -29,8 +29,8 @@ public class Hotel {
 	}
 	
 	public List<PremiumRoom> getPremiumRooms() {
-        return premiumRooms;
-    }
+		return premiumRooms;
+	}
 	
 	public List<EconomyRoom> getEconomyRooms() {
 		return economyRooms;

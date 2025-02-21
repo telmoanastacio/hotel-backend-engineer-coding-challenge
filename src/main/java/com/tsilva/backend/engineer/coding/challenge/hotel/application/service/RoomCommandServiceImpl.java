@@ -22,9 +22,11 @@ public class RoomCommandServiceImpl implements RoomCommandService {
 	private final Double premiumRoomThreshold;
 	private final Hotel2OccupancyCommandDocument converter = new Hotel2OccupancyCommandDocument();
 	
-	public RoomCommandServiceImpl(@Value("${hotel.room.premium.threshold}") Double premiumRoomThreshold) {
-        this.premiumRoomThreshold = premiumRoomThreshold;
-    }
+	public RoomCommandServiceImpl(
+			@Value("${hotel.room.premium.threshold}")
+			Double premiumRoomThreshold) {
+		this.premiumRoomThreshold = premiumRoomThreshold;
+	}
 	
 	@Nonnull
 	@Override
