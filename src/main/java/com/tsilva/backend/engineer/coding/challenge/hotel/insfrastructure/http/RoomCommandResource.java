@@ -1,5 +1,6 @@
 package com.tsilva.backend.engineer.coding.challenge.hotel.insfrastructure.http;
 
+import com.tsilva.backend.engineer.coding.challenge.hotel.application.service.RoomCommandService;
 import com.tsilva.backend.engineer.coding.challenge.hotel.domain.dto.room.OccupancyCommand;
 import com.tsilva.backend.engineer.coding.challenge.hotel.domain.dto.room.OccupancyCommandDocument;
 import org.springframework.http.ResponseEntity;
@@ -16,16 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/room")
 public class RoomCommandResource {
 	
+	private final RoomCommandService roomCommandService;
+	
+	public RoomCommandResource(RoomCommandService roomCommandService) {
+        this.roomCommandService = roomCommandService;
+    }
+	
 	@PostMapping("/occupancy")
 	public ResponseEntity<OccupancyCommandDocument> postOccupancy(@RequestBody OccupancyCommand command) {
-		// TODO: run the logic and build the correct value
-		return ResponseEntity.ok(
-				OccupancyCommandDocument.OccupancyCommandDocumentBuilder.builder()
-						.usagePremium(4)
-						.revenuePremium(523.00)
-						.usageEconomy(6)
-						.revenueEconomy(189.99)
-						.build()
-		);
+		return ResponseEntity.ok(roomCommandService.assignRooms(command));
 	}
 }

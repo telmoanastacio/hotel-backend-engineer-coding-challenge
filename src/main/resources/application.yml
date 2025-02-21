@@ -9,4 +9,4 @@ spring:
 hotel:
   room:
     premium:
-      threshold: 100.00
+      threshold: 100.0
