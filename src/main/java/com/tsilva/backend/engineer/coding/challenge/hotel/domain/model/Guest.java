@@ -12,7 +12,7 @@ public class Guest {
         this.payLimit = payLimit;
     }
 	
-	public Double getPayLimit() {
+	public Double retrievePayLimit() {
         return payLimit;
     }
 }

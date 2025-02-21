@@ -83,4 +83,22 @@ class RoomCommandServiceImplTest {
 								.build()
 				);
 	}
+	
+	@Test
+	void assignRoomsWhenThereAreTooFewEconomyRooms() {
+		var command = new OccupancyCommand(7, 2, POTENTIAL_GUESTS);
+		
+		var result = service.assignRooms(command);
+		
+		Assertions.assertThat(result)
+				.usingRecursiveComparison()
+				.isEqualTo(
+						OccupancyCommandDocument.OccupancyCommandDocumentBuilder.builder()
+								.usagePremium(7)
+								.revenuePremium(1153.99)
+								.usageEconomy(2)
+								.revenueEconomy(68.0)
+								.build()
+				);
+	}
 }
