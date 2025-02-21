@@ -1,6 +1,6 @@
 # Hotel Room Allocation
 
-## Build and run the application inside docker in 1 shot ny running the shell script
+## Build and run the application inside docker in 1 shot by running the shell script
 
 ```shell
 
